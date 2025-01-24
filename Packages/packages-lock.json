@@ -303,13 +303,6 @@
       },
       "url": "https://packages.unity.com"
     },
-    "com.wanderlustmakesgames.espresso": {
-      "version": "https://github.com/thewanderinglust/Espresso.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "8dfbc3a638543fed116107b67d731891987433a5"
-    },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
       "depth": 0,
