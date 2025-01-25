@@ -29,4 +29,9 @@ public class SodaDate : ScriptableObject
     {
         get { return m_color; }
     }
+
+    public Sprite FullBodySprite
+    {
+        get { return m_fullbodySprite; }
+    }
 }
