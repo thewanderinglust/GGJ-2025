@@ -15,6 +15,6 @@ MonoBehaviour:
   m_name: Ramune
   m_type: 0
   m_selectionSprite: {fileID: 0}
-  m_fullbodySprite: {fileID: 0}
+  m_fullbodySprite: {fileID: -3244369400413887546, guid: 42d0e4f0104142245bd64133a3aa8e85, type: 3}
   m_portraitSprite: {fileID: 0}
   m_color: {r: 0, g: 0.75344706, b: 1, a: 1}

@@ -1,11 +1,23 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SelectDateController : BaseUIController
 {
     [Header("Object Hookups")]
     [SerializeField] private List<VendingSelectButton> m_vendingButtons;
+    [SerializeField] private GameObject m_confirmButton;
+    [SerializeField] private GameObject m_datePortrait;
+
+    private SodaDate m_dateSelection;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        m_dateSelection = null;
+        m_confirmButton.SetActive(false);
+        m_datePortrait.SetActive(false);
+    }
 
     private void Start()
     {
@@ -22,7 +34,7 @@ public class SelectDateController : BaseUIController
             }
             else
             {
-                Destroy(vendButton);
+                Destroy(vendButton.gameObject);
             }
 
         }
@@ -35,5 +47,14 @@ public class SelectDateController : BaseUIController
     public void OnSodaSelect(SodaType a_selectedType)
     {
         Debug.Log("Selected: " + a_selectedType);
+        m_dateSelection = m_gameManager.SodaManager.GetSodaByType(a_selectedType);
+        m_datePortrait.GetComponent<Image>().sprite = m_dateSelection.FullBodySprite;
+        m_datePortrait.SetActive(true);
+        m_confirmButton.SetActive(true);
+    }
+
+    public void OnSelectionConfirmed()
+    {
+        Debug.Log("Selection confirmed");
     }
 }
