@@ -115,9 +115,10 @@ public class BaseCard : MonoBehaviour, ICard
         m_manager.PlayCard(this);
 
         m_state = CardState.PLAY;
-
+        /*
         m_manager.Player.Buzz += m_buzzModifier + m_defaultBuzz;
         m_manager.Player.Fizz += m_defaultFizz + m_fizzModifier;
+        */
 
         m_manager.DiscardCard(this);
 
