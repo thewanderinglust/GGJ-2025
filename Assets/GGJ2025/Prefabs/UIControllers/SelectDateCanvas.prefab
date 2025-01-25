@@ -253,3 +253,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_gameManager: {fileID: 0}
   m_controllerType: 2
+  m_vendingButtonPrefab: {fileID: 967964992316081064, guid: 282763edd9d549344b547ec1ce1beb1d, type: 3}
