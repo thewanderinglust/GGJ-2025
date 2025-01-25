@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class TitleController : MonoBehaviour
+public class MainController : BaseUIController
 {
     public void OnStart()
     {
-
+        m_gameManager.StartNewGame();
     }
 
     public void OnQuit()
