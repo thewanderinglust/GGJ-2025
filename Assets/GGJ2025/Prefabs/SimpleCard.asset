@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26bfea18892f0514b8264529f7b86f78, type: 3}
+  m_Name: SimpleCard
+  m_EditorClassIdentifier: 
+  m_defaultFizz: 1
+  m_defaultBuzz: 1
+  m_fizzModifier: 0
+  m_buzzModifier: 0
+  m_cardGameObject: {fileID: 6709383119185448712, guid: f2a3322093c159c41ad813288851643b, type: 3}
+  m_state: 0
+  m_suit: 0
