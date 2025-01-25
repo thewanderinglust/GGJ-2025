@@ -1,0 +1,34 @@
+{
+    "name": "GlobalActionMap",
+    "maps": [
+        {
+            "name": "MenuNavigation",
+            "id": "0544cfb5-64a2-416c-ac9c-f84ca3d7578a",
+            "actions": [
+                {
+                    "name": "QuitContext",
+                    "type": "Button",
+                    "id": "e45dc440-bac5-43c2-a1a8-3051e0a5117c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "01d57d37-094b-4954-8850-bd8bb9c08d3b",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "QuitContext",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
