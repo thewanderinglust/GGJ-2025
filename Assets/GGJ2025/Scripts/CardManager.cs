@@ -19,7 +19,7 @@ public class CardManager : ScriptableObject
         }
     }
 
-    public ISoda Soda
+    public SodaDate Soda
     {
         get
         {

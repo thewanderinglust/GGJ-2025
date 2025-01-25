@@ -18,7 +18,7 @@ public class TurnManager : MonoBehaviour
     [SerializeField]
     IPlayer m_player;
     [SerializeField]
-    ISoda m_soda;
+    SodaDate m_soda;
 
     private bool m_dateEnd = false;
 
@@ -30,7 +30,7 @@ public class TurnManager : MonoBehaviour
         }
     }
 
-    public ISoda Soda
+    public SodaDate Soda
     {
         get
         {
