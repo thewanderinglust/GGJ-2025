@@ -5,9 +5,9 @@ using UnityEngine;
 public class CardManager : ScriptableObject
 {
     Deck m_deck;
-    List<ICard> m_hand = new List<ICard>();
-    List<ICard> m_discard = new List<ICard>();
-    List<ICard> m_deadCards = new List<ICard>();
+    HandManager m_hand;
+    List<GameObject> m_discard = new List<GameObject>();
+    List<GameObject> m_deadCards = new List<GameObject>();
 
     TurnManager m_turnManager;
 
@@ -51,15 +51,19 @@ public class CardManager : ScriptableObject
         }
     }
 
-    public List<ICard> Hand
+    public HandManager Hand
     {
         get
         {
             return m_hand;
         }
+        set
+        {
+            m_hand = value;
+        }
     }
 
-    public List<ICard> DiscardPile
+    public List<GameObject> DiscardPile
     {
         get
         {
@@ -67,7 +71,7 @@ public class CardManager : ScriptableObject
         }
     }
 
-    public List<ICard> DeadCards
+    public List<GameObject> DeadCards
     {
         get
         {
@@ -85,15 +89,14 @@ public class CardManager : ScriptableObject
         }
 
         
-        ICard drawnCard = m_deck.DrawCard();
+        GameObject drawnCard = m_deck.DrawCard();
 
         if (drawnCard != null)
         {
-            m_hand.Add(drawnCard);
-            drawnCard.OnEnterHand();
+            m_hand.AddToHand(drawnCard);
+            drawnCard.GetComponent<ICard>().OnEnterHand();
         }
 
-        TurnManager.UpdateHand();
         
     }
 
@@ -104,23 +107,19 @@ public class CardManager : ScriptableObject
             DrawCard();
         }
 
-        TurnManager.UpdateHand();
     }
 
     public void PlayCard(ICard card)
     {
-        m_hand.Remove(card);
-
-        TurnManager.UpdateHand();
+        m_hand.RemoveFromHand((card as MonoBehaviour).gameObject);
 
     }
 
     public void DiscardCard(ICard card)
     {
-        m_discard.Add(card);
+        m_discard.Add((card as MonoBehaviour).gameObject);
         card.OnDiscard();
 
-        TurnManager.UpdateHand();
     }
 
     

@@ -4,23 +4,15 @@ using UnityEngine;
 public class Deck : MonoBehaviour
 {
     [SerializeField]
-    private List<GameObject> m_startingCards;
-    private List<ICard> m_cards;
+    private List<GameObject> m_cards;
 
     public void SetUpDeck()
     {
-        m_cards = new List<ICard>();
-
-        foreach (GameObject card in m_startingCards)
-        {
-           ICard cardScript = card.GetComponent<ICard>();
-            m_cards.Add(cardScript);
-        }
 
         Shuffle();
     }
 
-    public List<ICard> Cards
+    public List<GameObject> Cards
     {
         get
         {
@@ -36,9 +28,9 @@ public class Deck : MonoBehaviour
     /// Draws 1 card
     /// </summary>
     /// <returns></returns>
-    public ICard DrawCard()
+    public GameObject DrawCard()
     {
-        ICard retVal = null;
+        GameObject retVal = null;
 
         if (m_cards.Count > 0)
         {
@@ -55,9 +47,9 @@ public class Deck : MonoBehaviour
     /// </summary>
     /// <param name="drawAmount"></param>
     /// <returns></returns>
-    public List<ICard> DrawMultiple(int drawAmount)
+    public List<GameObject> DrawMultiple(int drawAmount)
     {
-        List<ICard> retVal = new List<ICard>();
+        List<GameObject> retVal = new List<GameObject>();
 
         for (int i = 0; i < drawAmount; i++)
         {
@@ -72,7 +64,7 @@ public class Deck : MonoBehaviour
     /// </summary>
     public void Shuffle()
     {
-        List<ICard> tempDeck = new List<ICard>();
+        List<GameObject> tempDeck = new List<GameObject>();
 
         while (m_cards.Count > 0)
         {

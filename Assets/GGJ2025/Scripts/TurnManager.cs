@@ -44,10 +44,13 @@ public class TurnManager : MonoBehaviour
         m_cardManager.TurnManager = this;
         m_cardManager.Deck = m_deck.GetComponent<Deck>();
         m_cardManager.Deck.SetUpDeck();
-        foreach(ICard card in m_cardManager.Deck.Cards)
+        foreach(GameObject card in m_cardManager.Deck.Cards)
         {
-            card.Manager = m_cardManager;
+            card.GetComponent<ICard>().Manager = m_cardManager;
         }
+
+        m_cardManager.Hand = m_hand.GetComponent<HandManager>();
+        m_hand.GetComponent<HandManager>().Manager = m_cardManager;
 
         FirstTurn();
     }
@@ -79,23 +82,4 @@ public class TurnManager : MonoBehaviour
         m_cardManager.DrawCard();
     }
 
-    public void UpdateHand()
-    {
-        foreach(Transform child in m_hand.transform)
-        {
-            Destroy(child.gameObject);
-        }
-
-        float increment = 1.0f;
-
-        float currentSpawn = m_hand.transform.position.x - (float)m_cardManager.Hand.Count / 2.0f;
-        foreach(ICard card in m_cardManager.Hand)
-        {
-            Instantiate((card as MonoBehaviour).gameObject, new Vector3 (currentSpawn, m_hand.transform.position.y, 0), Quaternion.identity, m_hand.transform);
-
-            currentSpawn += increment;
-
-        }
-
-    }
 }
