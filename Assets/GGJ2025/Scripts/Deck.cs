@@ -4,26 +4,20 @@ using UnityEngine;
 public class Deck : MonoBehaviour
 {
     [SerializeField]
-    private List<ScriptableObject> m_startingCards;
+    private List<GameObject> m_startingCards;
     private List<ICard> m_cards;
 
     public void SetUpDeck()
     {
         m_cards = new List<ICard>();
 
-        foreach (ScriptableObject card in m_startingCards)
+        foreach (GameObject card in m_startingCards)
         {
-           ICard cardScript = card as ICard;
+           ICard cardScript = card.GetComponent<ICard>();
             m_cards.Add(cardScript);
         }
 
         Shuffle();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public List<ICard> Cards

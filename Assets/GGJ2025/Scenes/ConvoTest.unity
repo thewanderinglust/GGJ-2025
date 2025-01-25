@@ -272,6 +272,10 @@ PrefabInstance:
       propertyPath: m_hand
       value: 
       objectReference: {fileID: 4312311141664580460}
+    - target: {fileID: 3085035845884360120, guid: 1f8868cb4c1e99e468be5b47041af8ec, type: 3}
+      propertyPath: m_handStartSize
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5435149992943340593, guid: 1f8868cb4c1e99e468be5b47041af8ec, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.8410382
@@ -454,43 +458,43 @@ PrefabInstance:
     - target: {fileID: 4429664948777843989, guid: fdfa084a37aebf7429b0bdd1a7879e51, type: 3}
       propertyPath: 'm_startingCards.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: 42e7cc1318e394d488fe8a5add44e801, type: 2}
+      objectReference: {fileID: 6709383119185448712, guid: f2a3322093c159c41ad813288851643b, type: 3}
     - target: {fileID: 4429664948777843989, guid: fdfa084a37aebf7429b0bdd1a7879e51, type: 3}
       propertyPath: 'm_startingCards.Array.data[1]'
       value: 
-      objectReference: {fileID: 11400000, guid: 42e7cc1318e394d488fe8a5add44e801, type: 2}
+      objectReference: {fileID: 6709383119185448712, guid: f2a3322093c159c41ad813288851643b, type: 3}
     - target: {fileID: 4429664948777843989, guid: fdfa084a37aebf7429b0bdd1a7879e51, type: 3}
       propertyPath: 'm_startingCards.Array.data[2]'
       value: 
-      objectReference: {fileID: 11400000, guid: 42e7cc1318e394d488fe8a5add44e801, type: 2}
+      objectReference: {fileID: 6709383119185448712, guid: f2a3322093c159c41ad813288851643b, type: 3}
     - target: {fileID: 4429664948777843989, guid: fdfa084a37aebf7429b0bdd1a7879e51, type: 3}
       propertyPath: 'm_startingCards.Array.data[3]'
       value: 
-      objectReference: {fileID: 11400000, guid: 42e7cc1318e394d488fe8a5add44e801, type: 2}
+      objectReference: {fileID: 6709383119185448712, guid: f2a3322093c159c41ad813288851643b, type: 3}
     - target: {fileID: 4429664948777843989, guid: fdfa084a37aebf7429b0bdd1a7879e51, type: 3}
       propertyPath: 'm_startingCards.Array.data[4]'
       value: 
-      objectReference: {fileID: 11400000, guid: 42e7cc1318e394d488fe8a5add44e801, type: 2}
+      objectReference: {fileID: 6709383119185448712, guid: f2a3322093c159c41ad813288851643b, type: 3}
     - target: {fileID: 4429664948777843989, guid: fdfa084a37aebf7429b0bdd1a7879e51, type: 3}
       propertyPath: 'm_startingCards.Array.data[5]'
       value: 
-      objectReference: {fileID: 11400000, guid: 42e7cc1318e394d488fe8a5add44e801, type: 2}
+      objectReference: {fileID: 6709383119185448712, guid: f2a3322093c159c41ad813288851643b, type: 3}
     - target: {fileID: 4429664948777843989, guid: fdfa084a37aebf7429b0bdd1a7879e51, type: 3}
       propertyPath: 'm_startingCards.Array.data[6]'
       value: 
-      objectReference: {fileID: 11400000, guid: 42e7cc1318e394d488fe8a5add44e801, type: 2}
+      objectReference: {fileID: 6709383119185448712, guid: f2a3322093c159c41ad813288851643b, type: 3}
     - target: {fileID: 4429664948777843989, guid: fdfa084a37aebf7429b0bdd1a7879e51, type: 3}
       propertyPath: 'm_startingCards.Array.data[7]'
       value: 
-      objectReference: {fileID: 11400000, guid: 42e7cc1318e394d488fe8a5add44e801, type: 2}
+      objectReference: {fileID: 6709383119185448712, guid: f2a3322093c159c41ad813288851643b, type: 3}
     - target: {fileID: 4429664948777843989, guid: fdfa084a37aebf7429b0bdd1a7879e51, type: 3}
       propertyPath: 'm_startingCards.Array.data[8]'
       value: 
-      objectReference: {fileID: 11400000, guid: 42e7cc1318e394d488fe8a5add44e801, type: 2}
+      objectReference: {fileID: 6709383119185448712, guid: f2a3322093c159c41ad813288851643b, type: 3}
     - target: {fileID: 4429664948777843989, guid: fdfa084a37aebf7429b0bdd1a7879e51, type: 3}
       propertyPath: 'm_startingCards.Array.data[9]'
       value: 
-      objectReference: {fileID: 11400000, guid: 42e7cc1318e394d488fe8a5add44e801, type: 2}
+      objectReference: {fileID: 6709383119185448712, guid: f2a3322093c159c41ad813288851643b, type: 3}
     - target: {fileID: 4429664948777843989, guid: fdfa084a37aebf7429b0bdd1a7879e51, type: 3}
       propertyPath: 'm_startingCards.Array.data[10]'
       value: 
