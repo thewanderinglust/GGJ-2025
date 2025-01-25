@@ -1,7 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "BaseCard", menuName = "Scriptable Objects/BaseCard")]
-public class BaseCard : ScriptableObject, ICard
+public class BaseCard : MonoBehaviour, ICard
 {
     [SerializeField]
     private int m_defaultFizz = 1;
@@ -12,9 +11,6 @@ public class BaseCard : ScriptableObject, ICard
     private int m_fizzModifier = 0;
     [SerializeField]
     private int m_buzzModifier = 0;
-
-    [SerializeField]
-    private GameObject m_cardGameObject;
 
     [SerializeField]
     private CardState m_state = CardState.DECK;
@@ -29,18 +25,6 @@ public class BaseCard : ScriptableObject, ICard
         set
         {
             m_manager = value;
-        }
-    }
-
-    public GameObject CardObject
-    {
-        get
-        {
-            return m_cardGameObject;
-        }
-        set
-        {
-            m_cardGameObject = value;
         }
     }
 

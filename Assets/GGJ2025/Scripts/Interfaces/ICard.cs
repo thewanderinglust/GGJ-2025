@@ -16,11 +16,6 @@ public enum CardSuit
 
 public interface ICard
 {
-    GameObject CardObject
-    {
-        get;
-        set;
-    }
 
     int DefaultFizz
     {

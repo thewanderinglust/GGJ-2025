@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TurnManager : MonoBehaviour
 {
@@ -85,12 +86,12 @@ public class TurnManager : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        float increment = .25f;
+        float increment = 1.0f;
 
         float currentSpawn = m_hand.transform.position.x - (float)m_cardManager.Hand.Count / 2.0f;
         foreach(ICard card in m_cardManager.Hand)
         {
-            Instantiate(card.CardObject, new Vector3 (currentSpawn, m_hand.transform.position.y, 0), Quaternion.identity, m_hand.transform);
+            Instantiate((card as MonoBehaviour).gameObject, new Vector3 (currentSpawn, m_hand.transform.position.y, 0), Quaternion.identity, m_hand.transform);
 
             currentSpawn += increment;
 
