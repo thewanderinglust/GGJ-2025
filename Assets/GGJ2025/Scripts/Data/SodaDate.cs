@@ -12,6 +12,9 @@ public class SodaDate : ScriptableObject
     [SerializeField] private Sprite m_fullbodySprite;
     [SerializeField] private Sprite m_portraitSprite;
 
+    [Header("Other Aesthetics")]
+    [SerializeField] private Color m_color;
+
     public string Name
     {
         get { return m_name; }
@@ -20,5 +23,10 @@ public class SodaDate : ScriptableObject
     public SodaType Type
     {
         get { return m_type; }
+    }
+
+    public Color Color
+    {
+        get { return m_color; }
     }
 }

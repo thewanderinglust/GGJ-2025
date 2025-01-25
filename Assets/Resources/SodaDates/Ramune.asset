@@ -17,3 +17,4 @@ MonoBehaviour:
   m_selectionSprite: {fileID: 0}
   m_fullbodySprite: {fileID: 0}
   m_portraitSprite: {fileID: 0}
+  m_color: {r: 0, g: 0.75344706, b: 1, a: 1}
