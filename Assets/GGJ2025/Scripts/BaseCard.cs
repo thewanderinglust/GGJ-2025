@@ -3,22 +3,22 @@ using UnityEngine;
 public class BaseCard : MonoBehaviour, ICard
 {
     [SerializeField]
-    private int m_defaultFizz = 1;
+    protected int m_defaultFizz = 1;
     [SerializeField]
-    private int m_defaultBuzz = 1;
+    protected int m_defaultBuzz = 1;
 
     [SerializeField]
-    private int m_fizzModifier = 0;
+    protected int m_fizzModifier = 0;
     [SerializeField]
-    private int m_buzzModifier = 0;
+    protected int m_buzzModifier = 0;
 
     [SerializeField]
-    private CardState m_state = CardState.DECK;
+    protected CardState m_state = CardState.DECK;
 
     [SerializeField]
-    private SuitType m_suit = SuitType.None;
+    protected SuitType m_suit = SuitType.None;
 
-    private CardManager m_manager;
+    protected CardManager m_manager;
 
     public CardManager Manager
     {
@@ -110,26 +110,25 @@ public class BaseCard : MonoBehaviour, ICard
         }
     }
 
-    public void OnPlay()
+    public virtual void OnPlay()
     {
         m_manager.PlayCard(this);
 
         m_state = CardState.PLAY;
-        /*
+
         m_manager.Player.Buzz += m_buzzModifier + m_defaultBuzz;
         m_manager.Player.Fizz += m_defaultFizz + m_fizzModifier;
-        */
 
         m_manager.DiscardCard(this);
 
     }
 
-    public void OnEnterHand()
+    public virtual void OnEnterHand()
     {
         m_state = CardState.HAND;
     }
 
-    public void OnDiscard()
+    public virtual void OnDiscard()
     {
         m_state = CardState.DISCARD;
     }
