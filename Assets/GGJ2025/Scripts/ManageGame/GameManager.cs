@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
     public void StartNewDate(SodaDate a_selectedDate)
     {
         DisableAllUIControllers();
+        m_turnManager.StartDate(a_selectedDate);
         m_dictUIControllers[UIControllerTypes.PlayDate].gameObject.SetActive(true);
     }
 
