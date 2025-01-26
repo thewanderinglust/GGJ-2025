@@ -103,7 +103,7 @@ public class TurnManager : MonoBehaviour
 
     public void StartTurn()
     {
-        m_cardManager.PlayedNoCards = false;
+        m_cardManager.PlayedNoCards = true;
         m_cardManager.DrawCard();
     }
 
