@@ -5,6 +5,8 @@ public class GameManager : MonoBehaviour
 {
     [Header("Object Hookups")]
     [SerializeField] private SodaManager m_sodaManager;
+    [SerializeField] private GameObject m_veronicasCanvas;
+    [SerializeField] private TurnManager m_turnManager;
 
     private Dictionary<UIControllerTypes, BaseUIController> m_dictUIControllers;
 
@@ -13,6 +15,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         DisableAllUIControllers();
+        m_veronicasCanvas.SetActive(false);
         m_dictUIControllers[UIControllerTypes.Main].gameObject.SetActive(true);
     }
 
