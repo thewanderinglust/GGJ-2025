@@ -39,4 +39,10 @@ public class GameManager : MonoBehaviour
             controller.gameObject.SetActive(false);
         }
     }
+
+    public void BackToMain()
+    {
+        DisableAllUIControllers();
+        m_dictUIControllers[UIControllerTypes.Main].gameObject.SetActive(true);
+    }
 }

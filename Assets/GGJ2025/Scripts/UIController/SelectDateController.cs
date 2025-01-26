@@ -57,4 +57,9 @@ public class SelectDateController : BaseUIController
     {
         Debug.Log("Selection confirmed");
     }
+
+    public void OnQuitContext()
+    {
+        m_gameManager.BackToMain();
+    }
 }
