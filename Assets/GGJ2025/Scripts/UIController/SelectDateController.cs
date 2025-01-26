@@ -8,6 +8,8 @@ public class SelectDateController : BaseUIController
     [SerializeField] private List<VendingSelectButton> m_vendingButtons;
     [SerializeField] private GameObject m_confirmButton;
     [SerializeField] private GameObject m_datePortrait;
+    [SerializeField] private GameObject m_profileBackdrop;
+    [SerializeField] private GameObject m_profileText;
 
     private SodaDate m_dateSelection;
 
@@ -17,6 +19,8 @@ public class SelectDateController : BaseUIController
         m_dateSelection = null;
         m_confirmButton.SetActive(false);
         m_datePortrait.SetActive(false);
+        m_profileBackdrop.SetActive(false);
+        m_profileText.SetActive(false);
     }
 
     private void Start()
@@ -51,6 +55,8 @@ public class SelectDateController : BaseUIController
         m_datePortrait.GetComponent<Image>().sprite = m_dateSelection.FullBodySprite;
         m_datePortrait.SetActive(true);
         m_confirmButton.SetActive(true);
+        m_profileBackdrop.SetActive(true);
+        m_profileText.SetActive(true);
     }
 
     public void OnSelectionConfirmed()

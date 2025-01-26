@@ -791,6 +791,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TitleCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7922432954402002119, guid: 035ce6d465f39d64cbd00f9775d2fb82, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8470731893519143486, guid: 035ce6d465f39d64cbd00f9775d2fb82, type: 3}
       propertyPath: m_gameManager
       value: 
@@ -956,6 +960,10 @@ PrefabInstance:
     - target: {fileID: 6395752729569883913, guid: a1fdea8804e628043878b6adbe15e67f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8224449307215216462, guid: a1fdea8804e628043878b6adbe15e67f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 820
       objectReference: {fileID: 0}
     - target: {fileID: 8297842853381050240, guid: a1fdea8804e628043878b6adbe15e67f, type: 3}
       propertyPath: m_gameManager
@@ -1306,6 +1314,10 @@ PrefabInstance:
     - target: {fileID: 7096092317769161346, guid: 605f41581f15f864cbf2d5fd172fd409, type: 3}
       propertyPath: m_Name
       value: SelectArenaCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096092317769161346, guid: 605f41581f15f864cbf2d5fd172fd409, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
