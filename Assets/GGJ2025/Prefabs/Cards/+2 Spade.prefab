@@ -291,7 +291,7 @@ MonoBehaviour:
   m_buzzModifier: 0
   m_state: 0
   m_suit: 4
-  m_fizzCostTMP: {fileID: 1597741225212992041}
+  m_fizzCostTMP: {fileID: 1424568431206744185}
 --- !u!1 &3318241791377881520
 GameObject:
   m_ObjectHideFlags: 0

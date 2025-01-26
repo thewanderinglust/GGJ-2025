@@ -22,9 +22,13 @@ public class SodaDate : ScriptableObject
     /// <summary>
     /// Internal state tracking for gameplay
     /// </summary>
-    public DateConditionType CurrentCondition { get {return m_currentCondition; } set { m_currentCondition = value; } }
+    public DateConditionType ConditionCurrent { get {return m_currentCondition; } set { m_currentCondition = value; } }
+
+    public DateState StateCurrent { get; private set; }
 
     private DateConditionType m_currentCondition = DateConditionType.None;
+
+    private int m_stateIndex = -1;
 
     public string Name
     {
@@ -44,5 +48,15 @@ public class SodaDate : ScriptableObject
     public Sprite FullBodySprite
     {
         get { return m_fullbodySprite; }
+    }
+
+    public void SetNextState()
+    {
+        m_stateIndex++;
+        if (m_stateIndex >= m_listDateStates.Count)
+        {
+            m_stateIndex = 0;
+        }
+        StateCurrent = m_listDateStates[m_stateIndex];
     }
 }

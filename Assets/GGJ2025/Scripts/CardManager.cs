@@ -110,6 +110,7 @@ public class CardManager : ScriptableObject
 
     public void PlayCard(ICard card)
     {
+        m_turnManager.CheckSuitTriggers(card.Suit);
         m_hand.RemoveFromHand((card as MonoBehaviour).gameObject);
         PlayedNoCards = false;
     }

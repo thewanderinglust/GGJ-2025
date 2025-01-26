@@ -17,7 +17,9 @@ public class TurnManager : MonoBehaviour
 
     [SerializeField] private Player m_player;
 
-    private SodaDate m_soda;
+    [SerializeField] private SodaDate m_soda;
+
+    [SerializeField] private PlayDateController m_dateUI;
 
     private bool m_dateEnd = false;
 
@@ -36,7 +38,6 @@ public class TurnManager : MonoBehaviour
 
     private void Awake()
     {
-
     }
 
     public void StartDate(SodaDate a_yourDate)
@@ -59,6 +60,7 @@ public class TurnManager : MonoBehaviour
     public void FirstTurn()
     {
         m_cardManager.DrawCard(m_handStartSize);
+        m_soda.SetNextState();
     }
 
     public void EndTurn()
@@ -92,15 +94,43 @@ public class TurnManager : MonoBehaviour
     private void ResolveConditions()
     {
         // Become confused if has not played cards and is in neutral state
-        if (m_cardManager.PlayedNoCards && Soda.CurrentCondition == DateConditionType.None)
+        if (m_cardManager.PlayedNoCards && Soda.ConditionCurrent == DateConditionType.None)
         {
-            Soda.CurrentCondition = DateConditionType.Confused;
+            Soda.ConditionCurrent = DateConditionType.Confused;
             Debug.Log("No cards played, date confused");
         }
-        else if (Soda.CurrentCondition == DateConditionType.Offended)
+        else if (Soda.ConditionCurrent == DateConditionType.Offended)
         {
             m_player.Fizz++;
             Debug.Log("+1 Fizz because date offended");
+        }
+
+        m_dateUI.OnConditionUpdate(Soda.ConditionCurrent);
+    }
+
+    private void ResolveSuitTrigger(StateEffectType a_effect)
+    {
+        if (a_effect == StateEffectType.Offended)
+        {
+            Soda.ConditionCurrent = DateConditionType.Offended;
+        }
+        else if (a_effect == StateEffectType.Bonus)
+        {
+            m_player.Buzz++;
+        }
+    }
+
+    public void CheckSuitTriggers(SuitType a_suit)
+    {
+        Debug.Log("Player played suit " + a_suit);
+        DateState state = Soda.StateCurrent;
+
+        if (a_suit != SuitType.None)
+        {
+            if (a_suit == state.Suit1 || a_suit == state.Suit2)
+            {
+                ResolveSuitTrigger(state.EffectType);
+            }
         }
     }
 

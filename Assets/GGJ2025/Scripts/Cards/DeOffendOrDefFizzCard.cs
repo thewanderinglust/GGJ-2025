@@ -8,9 +8,9 @@ public class DeOffendOrDefFizzCard : BaseCard
 
         m_state = CardState.PLAY;
 
-        if(m_manager.Soda.CurrentCondition == DateConditionType.Offended)
+        if(m_manager.Soda.ConditionCurrent == DateConditionType.Offended)
         {
-            m_manager.Soda.CurrentCondition = DateConditionType.None;
+            m_manager.Soda.ConditionCurrent = DateConditionType.None;
         }
         else
         {

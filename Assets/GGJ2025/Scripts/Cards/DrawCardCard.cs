@@ -18,7 +18,6 @@ public class DrawCardCard : BaseCard
     }
     public override void OnPlay()
     {
-        Debug.Log("OnPlay called");
         m_manager.DrawCard(m_cardsToDraw);
         base.OnPlay();
     }
