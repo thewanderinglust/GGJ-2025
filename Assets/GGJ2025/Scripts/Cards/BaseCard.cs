@@ -56,12 +56,8 @@ public class BaseCard : MonoBehaviour, ICard
         }
         set
         {
-            m_fizzModifier += value;
+            m_fizzModifier = value;
 
-            if (m_fizzModifier > m_defaultFizz)
-            {
-                m_fizzModifier = m_defaultFizz;
-            }
         }
     }
 
@@ -78,11 +74,6 @@ public class BaseCard : MonoBehaviour, ICard
         set
         {
             m_buzzModifier = value;
-
-            if (m_buzzModifier > m_defaultBuzz)
-            {
-                m_buzzModifier = m_defaultBuzz;
-            }
         }
     }
 
