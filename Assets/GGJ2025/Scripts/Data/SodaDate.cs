@@ -22,7 +22,7 @@ public class SodaDate : ScriptableObject
     /// <summary>
     /// Internal state tracking for gameplay
     /// </summary>
-    private DateConditionType CurrentCondition { get {return m_currentCondition; } set { m_currentCondition = value; } }
+    public DateConditionType CurrentCondition { get {return m_currentCondition; } set { m_currentCondition = value; } }
 
     private DateConditionType m_currentCondition = DateConditionType.None;
 
