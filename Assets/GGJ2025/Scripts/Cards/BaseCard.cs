@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class BaseCard : MonoBehaviour, ICard
 {
@@ -18,7 +19,14 @@ public class BaseCard : MonoBehaviour, ICard
     [SerializeField]
     protected SuitType m_suit = SuitType.None;
 
+    [SerializeField] protected TextMeshProUGUI m_fizzCostTMP;
+
     protected CardManager m_manager;
+
+    protected void Awake()
+    {
+        m_fizzCostTMP.text = m_defaultFizz.ToString();
+    }
 
     public CardManager Manager
     {
