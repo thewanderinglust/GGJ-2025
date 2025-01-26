@@ -7,10 +7,13 @@ public class HandManager : MonoBehaviour
     private List<GameObject> m_hand;
 
     [SerializeField]
-    private float m_handStart = -50;
+    private float m_handStartX = -100;
 
     [SerializeField]
-    private float m_handIncrement = 50;
+    private float m_handStartY = -100;
+
+    [SerializeField]
+    private float m_handIncrement = 100;
 
     private CardManager m_manager;
 
@@ -37,15 +40,30 @@ public class HandManager : MonoBehaviour
     public void AddToHand(GameObject card)
     {
         float numCards = (float)m_hand.Count;
-        GameObject cardObj = GameObject.Instantiate(card, new Vector3(this.gameObject.transform.position.x + m_handStart + m_handIncrement * numCards, this.gameObject.transform.position.y, 0),
-            Quaternion.identity, this.gameObject.transform);
-        m_hand.Add(cardObj);
-        cardObj.GetComponent<ICard>().Manager = m_manager;
+        card.SetActive(true);
+        m_hand.Add(card);
+        UpdateCardPositions();
+        card.GetComponent<ICard>().Manager = m_manager;
+    }
+
+    public void UpdateCardPositions()
+    {
+        RectTransform parentTransform = gameObject.GetComponent<RectTransform>();
+        float width = parentTransform.rect.width;
+        float height = parentTransform.rect.height;
+        float cardCount = (float)m_hand.Count;
+
+        int cardsPlaced = 0;
+        foreach (GameObject card in m_hand)
+        {
+            card.transform.position = new Vector3(m_handStartX + cardsPlaced * m_handIncrement, m_handStartY, 0);
+            cardsPlaced++;
+        }
     }
 
     public void RemoveFromHand(GameObject card)
     {
         m_hand.Remove(card);
-        Destroy(card);
+        card.SetActive(false);
     }
 }

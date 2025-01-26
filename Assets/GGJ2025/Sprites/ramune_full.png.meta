@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ramune_full_0: -3244369400413887546
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

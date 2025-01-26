@@ -4,11 +4,21 @@ using UnityEngine;
 public class Deck : MonoBehaviour
 {
     [SerializeField]
+    private List<GameObject> m_originalDeck;
+
     private List<GameObject> m_cards;
 
     public void SetUpDeck()
     {
+        m_cards = new List<GameObject>();
 
+        foreach(GameObject obj in m_originalDeck)
+        {
+            GameObject cardObj = Instantiate(obj, gameObject.transform.parent);
+            m_cards.Add(cardObj);
+            cardObj.SetActive(false);
+            
+        }
         Shuffle();
     }
 

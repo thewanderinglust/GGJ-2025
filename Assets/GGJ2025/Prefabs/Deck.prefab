@@ -88,10 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffc0e002318cc51418b84ee44b5d6b81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_cards:
-  - {fileID: 1369986461235182412, guid: f2a3322093c159c41ad813288851643b, type: 3}
-  - {fileID: 1369986461235182412, guid: f2a3322093c159c41ad813288851643b, type: 3}
-  - {fileID: 1369986461235182412, guid: f2a3322093c159c41ad813288851643b, type: 3}
+  m_originalDeck:
   - {fileID: 1369986461235182412, guid: f2a3322093c159c41ad813288851643b, type: 3}
   - {fileID: 1369986461235182412, guid: f2a3322093c159c41ad813288851643b, type: 3}
   - {fileID: 1369986461235182412, guid: f2a3322093c159c41ad813288851643b, type: 3}

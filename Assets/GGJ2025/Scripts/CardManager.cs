@@ -81,23 +81,18 @@ public class CardManager : ScriptableObject
 
     public void DrawCard()
     {
+        GameObject drawnCard = m_deck.DrawCard();
+
         if (m_deck.Cards.Count == 0)
         {
-            m_deck.Cards = m_discard;
-
-            m_deck.Shuffle();
+            m_deck.gameObject.SetActive(false);
         }
-
-        
-        GameObject drawnCard = m_deck.DrawCard();
 
         if (drawnCard != null)
         {
             m_hand.AddToHand(drawnCard);
             drawnCard.GetComponent<ICard>().OnEnterHand();
-        }
-
-        
+        }  
     }
 
     public void DrawCard(int cardsToDraw)
