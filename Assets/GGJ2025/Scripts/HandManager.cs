@@ -44,28 +44,24 @@ public class HandManager : MonoBehaviour
         card.SetActive(true);
         card.transform.SetParent(m_handContainer);
         m_hand.Add(card);
-        UpdateCardPositions();
         card.GetComponent<ICard>().Manager = m_manager;
-    }
-
-    public void UpdateCardPositions()
-    {
-        
-        //float width = parentTransform.rect.width;
-        //float height = parentTransform.rect.height;
-        //float cardCount = (float)m_hand.Count;
-        RectTransform parentTransform = gameObject.GetComponent<RectTransform>();
-        int cardsPlaced = 0;
-        foreach (GameObject card in m_hand)
-        {
-            card.transform.position = new Vector3(HandStartX + cardsPlaced * m_handIncrement, HandStartY, 0);
-            cardsPlaced++;
-        }
+        UpdateCardPositions();
     }
 
     public void RemoveFromHand(GameObject card)
     {
         m_hand.Remove(card);
         card.SetActive(false);
+        UpdateCardPositions();
+    }
+
+    public void UpdateCardPositions()
+    {
+        int cardsPlaced = 0;
+        foreach (GameObject card in m_hand)
+        {
+            card.transform.position = new Vector3(HandStartX + cardsPlaced * m_handIncrement, HandStartY, 0);
+            cardsPlaced++;
+        }
     }
 }

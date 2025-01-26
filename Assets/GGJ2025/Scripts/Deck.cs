@@ -1,10 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Deck : MonoBehaviour
 {
     [SerializeField]
     private List<GameObject> m_originalDeck;
+
+    [SerializeField] private TextMeshProUGUI m_countTMP;
 
     private List<GameObject> m_cards;
 
@@ -20,6 +23,7 @@ public class Deck : MonoBehaviour
             
         }
         Shuffle();
+        UpdateDeckCountDisplay();
     }
 
     public List<GameObject> Cards
@@ -48,7 +52,7 @@ public class Deck : MonoBehaviour
 
             m_cards.RemoveAt(0);
         }
-
+        UpdateDeckCountDisplay();
         return retVal;
     }
 
@@ -85,5 +89,10 @@ public class Deck : MonoBehaviour
         }
 
         m_cards = tempDeck;
+    }
+
+    private void UpdateDeckCountDisplay()
+    {
+        m_countTMP.text = m_cards.Count.ToString();
     }
 }

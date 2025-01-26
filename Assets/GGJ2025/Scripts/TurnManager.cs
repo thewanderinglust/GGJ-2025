@@ -10,7 +10,7 @@ public class TurnManager : MonoBehaviour
     private GameObject m_deck;
 
     [SerializeField]
-    private GameObject m_hand;
+    private HandManager m_handManager;
 
     [SerializeField]
     private int m_handStartSize;
@@ -50,8 +50,8 @@ public class TurnManager : MonoBehaviour
             card.GetComponent<ICard>().Manager = m_cardManager;
         }
 
-        m_cardManager.Hand = m_hand.GetComponent<HandManager>();
-        m_hand.GetComponent<HandManager>().Manager = m_cardManager;
+        m_cardManager.Hand = m_handManager.GetComponent<HandManager>();
+        m_handManager.GetComponent<HandManager>().Manager = m_cardManager;
 
         FirstTurn();
     }
@@ -79,6 +79,8 @@ public class TurnManager : MonoBehaviour
         {
             Debug.LogWarning("Date FAILED but not handled");
         }
+
+        m_handManager.UpdateCardPositions();
     }
 
     public void StartTurn()
