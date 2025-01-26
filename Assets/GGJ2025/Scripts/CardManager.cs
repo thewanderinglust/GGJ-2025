@@ -11,6 +11,10 @@ public class CardManager : ScriptableObject
 
     TurnManager m_turnManager;
 
+    public bool PlayedNoCards { get { return m_playedNoCards; } set{m_playedNoCards = value; } }
+
+    private bool m_playedNoCards = false;
+
     public IPlayer Player
     {
         get
@@ -107,7 +111,7 @@ public class CardManager : ScriptableObject
     public void PlayCard(ICard card)
     {
         m_hand.RemoveFromHand((card as MonoBehaviour).gameObject);
-
+        PlayedNoCards = false;
     }
 
     public void DiscardCard(ICard card)
