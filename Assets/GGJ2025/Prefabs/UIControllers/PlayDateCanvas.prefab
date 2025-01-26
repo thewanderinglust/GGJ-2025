@@ -1127,6 +1127,8 @@ MonoBehaviour:
   m_hand: []
   m_handIncrement: 100
   m_handContainer: {fileID: 8000083436598783141}
+  m_sfxCardDeal: {fileID: 0}
+  m_sfxPlayer: {fileID: 0}
 --- !u!1 &5661861403081783156
 GameObject:
   m_ObjectHideFlags: 0
@@ -1991,6 +1993,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1147233878248029700}
     m_Modifications:
+    - target: {fileID: 1250911542167042878, guid: fdfa084a37aebf7429b0bdd1a7879e51, type: 3}
+      propertyPath: m_fontSize
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250911542167042878, guid: fdfa084a37aebf7429b0bdd1a7879e51, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250911542167042878, guid: fdfa084a37aebf7429b0bdd1a7879e51, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 72
+      objectReference: {fileID: 0}
     - target: {fileID: 4818600116941227538, guid: fdfa084a37aebf7429b0bdd1a7879e51, type: 3}
       propertyPath: m_originalDeck.Array.size
       value: 16
@@ -2113,11 +2127,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8281333865182075318, guid: fdfa084a37aebf7429b0bdd1a7879e51, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 245.3095
       objectReference: {fileID: 0}
     - target: {fileID: 8281333865182075318, guid: fdfa084a37aebf7429b0bdd1a7879e51, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 125
+      value: 306.6368
       objectReference: {fileID: 0}
     - target: {fileID: 8281333865182075318, guid: fdfa084a37aebf7429b0bdd1a7879e51, type: 3}
       propertyPath: m_LocalScale.x
@@ -2161,11 +2175,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8281333865182075318, guid: fdfa084a37aebf7429b0bdd1a7879e51, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 509.4
+      value: 513
       objectReference: {fileID: 0}
     - target: {fileID: 8281333865182075318, guid: fdfa084a37aebf7429b0bdd1a7879e51, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -214.6
+      value: -220
       objectReference: {fileID: 0}
     - target: {fileID: 8281333865182075318, guid: fdfa084a37aebf7429b0bdd1a7879e51, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

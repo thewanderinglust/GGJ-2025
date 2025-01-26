@@ -11,8 +11,14 @@ public class GameManager : MonoBehaviour
 
     public SodaManager SodaManager { get { return m_sodaManager; } }
 
+    [SerializeField] private AudioSource m_musicPlayer;
+    [SerializeField] private AudioClip m_titleMusic;
+    [SerializeField] private AudioClip m_dateMusic;
+
     private void Start()
     {
+        m_musicPlayer.clip = m_titleMusic;
+        m_musicPlayer.Play();
         DisableAllUIControllers();
         m_dictUIControllers[UIControllerTypes.Main].gameObject.SetActive(true);
     }
@@ -35,6 +41,9 @@ public class GameManager : MonoBehaviour
 
     public void StartNewDate(SodaDate a_selectedDate)
     {
+        m_musicPlayer.Stop();
+        m_musicPlayer.clip = m_dateMusic;
+        m_musicPlayer.Play();
         DisableAllUIControllers();
         m_turnManager.StartDate(a_selectedDate);
         m_dictUIControllers[UIControllerTypes.PlayDate].gameObject.SetActive(true);
@@ -42,18 +51,27 @@ public class GameManager : MonoBehaviour
 
     public void BackToMain()
     {
+        m_musicPlayer.Stop();
+        m_musicPlayer.clip = m_titleMusic;
+        m_musicPlayer.Play();
         DisableAllUIControllers();
         m_dictUIControllers[UIControllerTypes.Main].gameObject.SetActive(true);
     }
 
     public void FailDate()
     {
+        m_musicPlayer.Stop();
+        m_musicPlayer.clip = m_titleMusic;
+        m_musicPlayer.Play();
         DisableAllUIControllers();
         m_dictUIControllers[UIControllerTypes.FailDate].gameObject.SetActive(true);
     }
 
     public void WinDate()
     {
+        m_musicPlayer.Stop();
+        m_musicPlayer.clip = m_titleMusic;
+        m_musicPlayer.Play();
         DisableAllUIControllers();
         m_dictUIControllers[UIControllerTypes.WinDate].gameObject.SetActive(true);
     }

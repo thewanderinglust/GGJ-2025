@@ -13,6 +13,9 @@ public class HandManager : MonoBehaviour
     [SerializeField]
     private RectTransform m_handContainer;
 
+    [SerializeField] private AudioClip m_sfxCardDeal;
+    [SerializeField] private AudioSource m_sfxPlayer;
+
     private CardManager m_manager;
 
     private float HandStartX { get { return m_handContainer.transform.position.x; } }
@@ -46,6 +49,7 @@ public class HandManager : MonoBehaviour
         m_hand.Add(card);
         card.GetComponent<ICard>().Manager = m_manager;
         UpdateCardPositions();
+        m_sfxPlayer.PlayOneShot(m_sfxCardDeal);
     }
 
     public void RemoveFromHand(GameObject card)
