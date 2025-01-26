@@ -34,7 +34,7 @@ public class SelectDateController : BaseUIController
             }
             else
             {
-                Destroy(vendButton.gameObject);
+                vendButton.gameObject.SetActive(false);
             }
 
         }
@@ -56,10 +56,6 @@ public class SelectDateController : BaseUIController
     public void OnSelectionConfirmed()
     {
         Debug.Log("Selection confirmed");
-    }
-
-    public void OnQuitContext()
-    {
-        m_gameManager.BackToMain();
+        m_gameManager.StartNewDate(m_dateSelection);
     }
 }

@@ -9,11 +9,6 @@ public enum CardState
     DEAD
 }
 
-public enum CardSuit
-{
-    NONE
-}
-
 public interface ICard
 {
 
@@ -45,7 +40,7 @@ public interface ICard
         set;
     }
     
-    CardSuit Suit
+    SuitType Suit
     {
         get;
         set;

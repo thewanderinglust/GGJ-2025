@@ -23,7 +23,7 @@ public class MainController : BaseUIController
 
     }
 
-    public void OnQuitContext()
+    public override void OnQuitContext()
     {
         Debug.Log("Yeah I hear you");
         OnQuit();

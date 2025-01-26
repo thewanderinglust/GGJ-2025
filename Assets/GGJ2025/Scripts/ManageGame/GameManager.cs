@@ -10,6 +10,12 @@ public class GameManager : MonoBehaviour
 
     public SodaManager SodaManager { get { return m_sodaManager; } }
 
+    private void Start()
+    {
+        DisableAllUIControllers();
+        m_dictUIControllers[UIControllerTypes.Main].gameObject.SetActive(true);
+    }
+
     public void RegisterUIController(UIControllerTypes a_type, BaseUIController a_controller)
     {
         if (m_dictUIControllers == null)
@@ -20,16 +26,22 @@ public class GameManager : MonoBehaviour
         m_dictUIControllers.Add(a_type, a_controller);
     }
 
-    private void Start()
-    {
-        DisableAllUIControllers();
-        m_dictUIControllers[UIControllerTypes.Main].gameObject.SetActive(true);
-    }
-
     public void StartNewGame()
     {
         DisableAllUIControllers();
         m_dictUIControllers[UIControllerTypes.SelectDate].gameObject.SetActive(true);
+    }
+
+    public void StartNewDate(SodaDate a_selectedDate)
+    {
+        DisableAllUIControllers();
+        m_dictUIControllers[UIControllerTypes.PlayDate].gameObject.SetActive(true);
+    }
+
+    public void BackToMain()
+    {
+        DisableAllUIControllers();
+        m_dictUIControllers[UIControllerTypes.Main].gameObject.SetActive(true);
     }
 
     private void DisableAllUIControllers()
@@ -38,11 +50,5 @@ public class GameManager : MonoBehaviour
         {
             controller.gameObject.SetActive(false);
         }
-    }
-
-    public void BackToMain()
-    {
-        DisableAllUIControllers();
-        m_dictUIControllers[UIControllerTypes.Main].gameObject.SetActive(true);
     }
 }

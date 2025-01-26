@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 42d0e4f0104142245bd64133a3aa8e85
+guid: 030e7df2b916f2647b38bf1ee9c14118
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3244369400413887546
-    second: ramune_full_0
+      213: -5063051526609241144
+    second: status_bubble_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ramune_full_0
+      name: status_bubble_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 12
-        width: 322
-        height: 699
+        x: 0
+        y: 0
+        width: 713
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6c3ee20483fa9f2d0800000000000000
-      internalID: -3244369400413887546
+      spriteID: 8cbf4f4367d6cb9b0800000000000000
+      internalID: -5063051526609241144
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ramune_full_0: -3244369400413887546
+      status_bubble_0: -5063051526609241144
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

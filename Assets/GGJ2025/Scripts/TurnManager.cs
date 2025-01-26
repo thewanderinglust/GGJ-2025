@@ -68,6 +68,7 @@ public class TurnManager : MonoBehaviour
 
     public void EndTurn()
     {
+        // EMILY TODO: Emily will handle state tracking and changes and cool fun stuff yay with the date/status/conditions
         //check if date ended
 
         if (!m_dateEnd)

@@ -16,7 +16,7 @@ public class BaseCard : MonoBehaviour, ICard
     private CardState m_state = CardState.DECK;
 
     [SerializeField]
-    private CardSuit m_suit = CardSuit.NONE;
+    private SuitType m_suit = SuitType.None;
 
     private CardManager m_manager;
 
@@ -98,7 +98,7 @@ public class BaseCard : MonoBehaviour, ICard
         }
     }
 
-    public CardSuit Suit
+    public SuitType Suit
     {
         get
         {

@@ -9,4 +9,15 @@ public class BaseUIController : MonoBehaviour
     {
         m_gameManager.RegisterUIController(m_controllerType, this);
     }
+
+    public virtual void OnQuitContext()
+    {
+        m_gameManager.BackToMain();
+        Reset();
+    }
+
+    protected virtual void Reset()
+    {
+        Debug.LogWarning(gameObject.name + " called Reset, but it is not implemented!");
+    }
 }
