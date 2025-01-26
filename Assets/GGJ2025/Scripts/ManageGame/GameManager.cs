@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     {
         DisableAllUIControllers();
         m_turnManager.StartDate(a_selectedDate);
+        m_veronicasCanvas.gameObject.SetActive(true);
         m_dictUIControllers[UIControllerTypes.PlayDate].gameObject.SetActive(true);
     }
 

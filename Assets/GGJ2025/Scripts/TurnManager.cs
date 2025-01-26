@@ -15,19 +15,15 @@ public class TurnManager : MonoBehaviour
     [SerializeField]
     private int m_handStartSize;
 
-    [SerializeField]
-    IPlayer m_player;
-    
-    SodaDate m_soda;
+    [SerializeField] private Player m_player;
+
+    private SodaDate m_soda;
 
     private bool m_dateEnd = false;
 
     public IPlayer Player
     {
-        get
-        {
-            return m_player;
-        }
+        get { return m_player; }
     }
 
     public SodaDate Soda
@@ -36,6 +32,11 @@ public class TurnManager : MonoBehaviour
         {
             return m_soda;
         }
+    }
+
+    private void Awake()
+    {
+
     }
 
     public void StartDate(SodaDate a_yourDate)
