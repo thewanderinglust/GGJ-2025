@@ -12,7 +12,11 @@ public class DeOffendOrDefFizzCard : BaseCard
         {
             m_manager.Soda.CurrentCondition = DateConditionType.None;
         }
-        m_manager.Player.Fizz += m_defaultFizz + m_fizzModifier;
+        else
+        {
+            m_manager.Player.Fizz += DefaultFizz;
+
+        }
 
         m_manager.DiscardCard(this);
 

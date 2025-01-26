@@ -6,7 +6,6 @@ public class BuzzPerDiscardCard : BaseCard
     {
         int buzzToGain = m_manager.DiscardPile.Count;
 
-        BuzzModifier = BuzzModifier * -1;
         BuzzModifier = buzzToGain;
 
         base.OnPlay();
