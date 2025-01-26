@@ -144,6 +144,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1869858215}
     - target: {fileID: 3085035845884360120, guid: 1f8868cb4c1e99e468be5b47041af8ec, type: 3}
+      propertyPath: m_gameManager
+      value: 
+      objectReference: {fileID: 969750750352565179}
+    - target: {fileID: 3085035845884360120, guid: 1f8868cb4c1e99e468be5b47041af8ec, type: 3}
       propertyPath: m_handManager
       value: 
       objectReference: {fileID: 1939850465}

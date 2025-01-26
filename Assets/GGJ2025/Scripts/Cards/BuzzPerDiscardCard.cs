@@ -5,8 +5,7 @@ public class BuzzPerDiscardCard : BaseCard
    public override void OnPlay()
     {
         int buzzToGain = m_manager.DiscardPile.Count;
-
-        BuzzModifier = buzzToGain;
+        m_manager.Player.Buzz += buzzToGain;
 
         base.OnPlay();
     }

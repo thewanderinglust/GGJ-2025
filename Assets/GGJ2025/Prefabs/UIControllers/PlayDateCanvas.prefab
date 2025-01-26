@@ -451,7 +451,7 @@ MonoBehaviour:
   m_confusedString: CONFUSED?!
   m_offendedColor: {r: 1, g: 0, b: 0, a: 1}
   m_confusedColor: {r: 0.60318184, g: 0, b: 1, a: 1}
-  m_statusTMP: {fileID: 0}
+  m_statusTMP: {fileID: 6484897577265026413}
 --- !u!114 &6484897577265026413
 MonoBehaviour:
   m_ObjectHideFlags: 0

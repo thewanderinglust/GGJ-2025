@@ -46,6 +46,18 @@ public class GameManager : MonoBehaviour
         m_dictUIControllers[UIControllerTypes.Main].gameObject.SetActive(true);
     }
 
+    public void FailDate()
+    {
+        DisableAllUIControllers();
+        m_dictUIControllers[UIControllerTypes.FailDate].gameObject.SetActive(true);
+    }
+
+    public void WinDate()
+    {
+        DisableAllUIControllers();
+        m_dictUIControllers[UIControllerTypes.WinDate].gameObject.SetActive(true);
+    }
+
     private void DisableAllUIControllers()
     {
         foreach(BaseUIController controller in m_dictUIControllers.Values)

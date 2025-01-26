@@ -1,3 +1,5 @@
+using JetBrains.Annotations;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,14 +16,13 @@ public class TurnManager : MonoBehaviour
 
     [SerializeField]
     private int m_handStartSize;
+    [SerializeField] private GameManager m_gameManager;
 
     [SerializeField] private Player m_player;
 
     [SerializeField] private SodaDate m_soda;
 
     [SerializeField] private PlayDateController m_dateUI;
-
-    private bool m_dateEnd = false;
 
     public IPlayer Player
     {
@@ -34,10 +35,6 @@ public class TurnManager : MonoBehaviour
         {
             return m_soda;
         }
-    }
-
-    private void Awake()
-    {
     }
 
     public void StartDate(SodaDate a_yourDate)
@@ -61,28 +58,46 @@ public class TurnManager : MonoBehaviour
     {
         m_cardManager.DrawCard(m_handStartSize);
         m_soda.SetNextState();
+        m_dateUI.OnStateUpdate(Soda.StateCurrent);
     }
 
     public void EndTurn()
     {
         ResolveConditions();
 
-        /// EMILY TODO
-        /// THINK LONG AND HARD ABOUT 
-        /// THE DATE ENDING WHEN YOU GAIN ENOUGH BUZZ OR ACCUMULATE TOO MUCH FIZZ
-        /// CONSIDER WHERE/HOW THAT SHOULD BE HANDLED
-        /// MAYBE THE EVALUATIONS SHOULD BE PUBLIC FUNCTIONS THAT GET CALLED?
-        // Move to next turn or end the game
-        if (!m_dateEnd)
+        // Set a new state if there is not a condition
+        if (Soda.ConditionCurrent == DateConditionType.None)
         {
-            StartTurn();
-        }
-        else
-        {
-            Debug.LogWarning("Date FAILED but not handled");
+            m_soda.SetNextState();
+            m_dateUI.OnStateUpdate(Soda.StateCurrent);
         }
 
+        CheckGameEndConditions();
+
+        // Update the card positions
         m_handManager.UpdateCardPositions();
+
+        // Start a new turn
+        StartTurn();
+    }
+
+    public void CheckGameEndConditions()
+    {
+        Debug.Log("CHECKING END CONDITIONS");
+        Debug.Log("Fizz: " + m_player.Fizz);
+        Debug.Log("Buzz: " + m_player.Buzz);
+        if (m_player.Fizz >= m_player.FizzToLose)
+        {
+            m_gameManager.FailDate();
+        }
+        else if (m_player.Buzz >= m_player.BuzzToWin)
+        {
+            m_gameManager.WinDate();
+        }
+        else if (m_deck.GetComponent<Deck>().Cards.Count == 0 && m_handManager.Hand.Count == 0)
+        {
+            m_gameManager.FailDate();
+        }
     }
 
     public void StartTurn()
@@ -97,7 +112,8 @@ public class TurnManager : MonoBehaviour
         if (m_cardManager.PlayedNoCards && Soda.ConditionCurrent == DateConditionType.None)
         {
             Soda.ConditionCurrent = DateConditionType.Confused;
-            Debug.Log("No cards played, date confused");
+            m_player.Fizz++;
+            Debug.Log("No cards played, date now confused");
         }
         else if (Soda.ConditionCurrent == DateConditionType.Offended)
         {
@@ -112,7 +128,10 @@ public class TurnManager : MonoBehaviour
     {
         if (a_effect == StateEffectType.Offended)
         {
+            Debug.Log("NOW OFFENDED");
             Soda.ConditionCurrent = DateConditionType.Offended;
+            m_player.Fizz++;
+            m_dateUI.OnConditionUpdate(Soda.ConditionCurrent);
         }
         else if (a_effect == StateEffectType.Bonus)
         {
@@ -122,16 +141,22 @@ public class TurnManager : MonoBehaviour
 
     public void CheckSuitTriggers(SuitType a_suit)
     {
-        Debug.Log("Player played suit " + a_suit);
+        Debug.Log("CHECK SUIT TRIGGERS " + a_suit);
         DateState state = Soda.StateCurrent;
 
         if (a_suit != SuitType.None)
         {
             if (a_suit == state.Suit1 || a_suit == state.Suit2)
             {
+                Debug.Log("SUIT TRIGGER");
                 ResolveSuitTrigger(state.EffectType);
             }
         }
+    }
+
+    public void UpdateCondition(DateConditionType a_newCondition)
+    {
+        m_dateUI.OnConditionUpdate(a_newCondition);
     }
 
 }

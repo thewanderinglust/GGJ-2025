@@ -25,10 +25,6 @@ public class PlayDateController : BaseUIController
         base.Awake();
 
         m_conditionOverlay.gameObject.SetActive(false);
-
-        m_effectImage.gameObject.SetActive(false);
-        m_suit1Image.gameObject.SetActive(false);
-        m_suit2Image.gameObject.SetActive(false);
     }
 
     public void OnConditionUpdate(DateConditionType a_newCondition)

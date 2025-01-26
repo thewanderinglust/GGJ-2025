@@ -11,6 +11,7 @@ public class DeOffendOrDefFizzCard : BaseCard
         if(m_manager.Soda.ConditionCurrent == DateConditionType.Offended)
         {
             m_manager.Soda.ConditionCurrent = DateConditionType.None;
+            m_manager.TurnManager.UpdateCondition(DateConditionType.None);
         }
         else
         {

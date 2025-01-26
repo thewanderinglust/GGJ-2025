@@ -11,6 +11,9 @@ public class Player : MonoBehaviour, IPlayer
     [SerializeField] private Slider m_fizzSlider;
     [SerializeField] private Slider m_buzzSlider;
 
+    public int FizzToLose { get { return m_fizzToLose; } }
+    public int BuzzToWin { get { return m_buzzToWin; } }
+
     private int m_buzzCurrent;
     private int m_fizzCurrent;
 

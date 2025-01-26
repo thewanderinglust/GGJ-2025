@@ -17,10 +17,8 @@ MonoBehaviour:
   m_listDateStates:
   - {fileID: 11400000, guid: 3720e320f478c5a41b241a1ccf8ae89e, type: 2}
   - {fileID: 11400000, guid: 7352f9883a2c3d54b9c9f2dcc9b34874, type: 2}
-  - {fileID: 11400000, guid: e9f4375cf2e1b144aae6853c6c316141, type: 2}
   - {fileID: 11400000, guid: 8c585e8e21f038c41ad7e34d0cc2824a, type: 2}
   - {fileID: 11400000, guid: 93564314359a6904d95e8546b68a8f67, type: 2}
-  - {fileID: 11400000, guid: d78d1642488e6864f84b5d1e3509684b, type: 2}
   m_selectionSprite: {fileID: 0}
   m_fullbodySprite: {fileID: 21300000, guid: 42d0e4f0104142245bd64133a3aa8e85, type: 3}
   m_portraitSprite: {fileID: 0}
