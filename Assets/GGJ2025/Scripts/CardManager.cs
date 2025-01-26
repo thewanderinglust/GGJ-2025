@@ -9,7 +9,7 @@ public class CardManager : MonoBehaviour
 
     TurnManager m_turnManager;
 
-    public bool PlayedNoCards { get { return m_playedNoCards; } set{m_playedNoCards = value; } }
+    public bool PlayedNoCards { get { return m_playedNoCards; } set{ m_playedNoCards = value; } }
 
     private bool m_playedNoCards = false;
 
@@ -117,14 +117,22 @@ public class CardManager : MonoBehaviour
         m_turnManager.CheckSuitTriggers(card.Suit);
         m_hand.RemoveFromHand((card as MonoBehaviour).gameObject);
         PlayedNoCards = false;
+        m_turnManager.CheckGameEndConditions();
+        RemoveConfused();
     }
 
     public void DiscardCard(ICard card)
     {
         m_discard.Add((card as MonoBehaviour).gameObject);
         card.OnDiscard();
-
     }
 
+    public void RemoveConfused()
+    {
+        if (Soda.ConditionCurrent == DateConditionType.Confused)
+        {
+            Soda.ConditionCurrent = DateConditionType.None;
+        }
+    }
     
 }
