@@ -17,7 +17,7 @@ public class TurnManager : MonoBehaviour
 
     [SerializeField]
     IPlayer m_player;
-    [SerializeField]
+    
     SodaDate m_soda;
 
     private bool m_dateEnd = false;
@@ -38,9 +38,9 @@ public class TurnManager : MonoBehaviour
         }
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void StartDate(SodaDate a_yourDate)
     {
+        m_soda = a_yourDate;
         m_cardManager.TurnManager = this;
         m_cardManager.Deck = m_deck.GetComponent<Deck>();
         m_cardManager.Deck.SetUpDeck();
@@ -55,12 +55,6 @@ public class TurnManager : MonoBehaviour
         FirstTurn();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void FirstTurn()
     {
         m_cardManager.DrawCard(m_handStartSize);
@@ -69,13 +63,14 @@ public class TurnManager : MonoBehaviour
     public void EndTurn()
     {
         // EMILY TODO: Emily will handle state tracking and changes and cool fun stuff yay with the date/status/conditions
-        //check if date ended
 
+        // IF THE CURRENT CONDITION IS OFFENDED, GAIN A FIZZ
+        // IF THE CURRENT CONDITION IS NONE, EVALUATE THE 
+        //check if date ended
         if (!m_dateEnd)
         {
             StartTurn();
         }
-        
     }
 
     public void StartTurn()
