@@ -1,8 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-
-[CreateAssetMenu(fileName = "CardManager", menuName = "Scriptable Objects/CardManager")]
-public class CardManager : ScriptableObject
+public class CardManager : MonoBehaviour
 {
     Deck m_deck;
     HandManager m_hand;
@@ -14,6 +12,12 @@ public class CardManager : ScriptableObject
     public bool PlayedNoCards { get { return m_playedNoCards; } set{m_playedNoCards = value; } }
 
     private bool m_playedNoCards = false;
+
+    public void Clear()
+    {
+        m_discard = new List<GameObject>();
+        m_deadCards = new List<GameObject>();
+    }
 
     public IPlayer Player
     {

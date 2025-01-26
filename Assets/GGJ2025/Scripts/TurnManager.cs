@@ -41,6 +41,7 @@ public class TurnManager : MonoBehaviour
     {
         m_soda = a_yourDate;
         m_cardManager.TurnManager = this;
+        m_cardManager.Clear();
         m_cardManager.Deck = m_deck.GetComponent<Deck>();
         m_cardManager.Deck.SetUpDeck();
         foreach(GameObject card in m_cardManager.Deck.Cards)

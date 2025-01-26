@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ramune_cropped_0: -7584316957848856138
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
